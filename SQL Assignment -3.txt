@@ -1,0 +1,24 @@
+SQL Assignment no -3
+
+1. find query to print firstname after removing the whitespaces.
+
+   SELECT RTRIM("FIRSTNAME")
+
+2. find query to get distinct values departments from worker table and print its length.
+   
+   SELECT DISTINCT DEPARTMENT , LEN(DEPARTMENT) FROM WORKER
+
+3. fetch n th highest salaries from table.
+   
+   SELECT DISTINCT SALARY FROM TABLE 
+   ORDER BY SALARY DESC 
+   LIMIT N-1,1 
+
+             OR
+
+   SELECT * FROM EMPLOYEE WHERE SALARY =
+         ( SELECT MIN(SALARY) FROM EMPLYOEE WHERE SALARY IN
+                 
+          (SELECT DISTINCT TOP N SALARY FROM EMPLOYEE ORDER BY SALARY DESC)
+          
+         )
